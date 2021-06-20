@@ -1,0 +1,120 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Single+Day&display=swap");
+/* attribute 이름 정해서 바꿀수 있음  |= *= ~= 등등 ===================== */
+body {
+  font-size: 1.5rem;
+  /* 문장 길이 똑같이 함 */
+  text-align: justify;
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+}
+table {
+  /*  옆에 다닥다닥 붙음  */
+  display: inline;
+}
+
+h1,
+td {
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+nav {
+}
+
+a {
+  text-decoration: none;
+  color: darkslategray;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+img[class|="nav__logo"] {
+  width: 300px;
+}
+
+.kr {
+  font-family: "Single Day", cursive, sans-serif;
+}
+
+.nav__link-container {
+  background: radial-gradient(circle, white 20%, pink 30%);
+  padding: 2rem;
+}
+
+.nav__main__links {
+  margin-left: 2rem;
+}
+
+.nav__burger-icon__lines-dummy {
+  margin: 0 auto;
+  height: 400px;
+  width: 80%;
+  background-image: url("https://assets.website-files.com/5e08c3c8edb7545544a00312/5e2c66ad86f417560716e602_starbicycle-biketypen-mtb-thumb.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 70%; /* 문장 길이 똑같이 함 */
+}
+.float {
+  /*  float  밑에 있는게 위로 올라감 */
+  float: right;
+  width: 500px;
+  margin: 0 20px;
+}
+.objectfitimg {
+  width: 20rem;
+}
+
+.utility__linkblock__arrow {
+  width: 100px;
+}
+.contactblock__icon {
+  width: 200px;
+}
+
+/* Flex 부모에 하는 게 많음*/
+
+.bloglist__wrapper {
+  display: flex;
+  background: linear-gradient(to bottom, pink, lightblue);
+  /* 위치 반대방향으로 */
+  /* flex-direction: row-reverse; */
+
+  /* flex-wrap: wrap; */
+  /* 양갈래로 마진  */
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.bloglist__wrapper:nth-child(1) {
+  flex: 5 0 100px;
+}
+.bloglist__wrapper:nth-child(2) {
+  flex: 1 0 100px;
+}
+.bloglist__wrapper:nth-child(3) {
+  flex: 1 0 100px;
+}
+
+/* Flex.html */
+
+.flex-container {
+  margin-top: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  background: lightcoral;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  height: 50px;
+  line-height: 49px;
+}
