@@ -103,8 +103,7 @@ img[class|="nav__logo"] {
 /* Flex.html */
 
 .flex-container {
-  margin-top: 200px;
-
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,6 +114,135 @@ img[class|="nav__logo"] {
   width: 100px;
   margin: 10px;
   text-align: center;
+
+  /*  한줄 자리 글자 세로 중간 정렬 */
   height: 50px;
   line-height: 49px;
+}
+
+/* Grid  히어로 강의 */
+.grid-container {
+  background-color: aquamarine;
+  min-height: 300px;
+  display: grid;
+  /*  사이즈  */
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 50px;
+  /* <----- 이것도 쓸스 있고 justify-items:쓸수도 있음  ------> */
+  /* justify-content: space-evenly; */
+  /* justify-content: end; */
+  /* justify-content: end; */
+  /* align-content: space-between; */
+  align-content: end;
+  grid-gap: 200px 200px;
+}
+.grid-item {
+  color: aliceblue;
+  background-color: black;
+  width: 50px;
+  text-align: center;
+  line-height: 49px;
+  margin: 10px;
+}
+
+/* Grid  히어로 강의 */
+.grid-container2 {
+  background-color: plum;
+  min-height: 300px;
+  display: grid;
+}
+
+.grid-item2 {
+  color: black;
+  background-color: white;
+  width: 50px;
+  text-align: center;
+  line-height: 49px;
+}
+
+/* Transition */
+.transiton {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+.transiton :nth-child(1) {
+  /* 마지막꺼는 딜레이 */
+  background: plum;
+  transition: background 1s ease 1s;
+}
+.transiton :nth-child(1):hover {
+  background: rgb(79, 194, 230);
+  cursor: pointer;
+}
+.transiton :nth-child(2) {
+  background: dodgerblue;
+  transition: all 200ms ease;
+}
+.transiton :nth-child(2):hover {
+  /*  툭 튀어나오는 느낌 */
+  cursor: pointer;
+  padding: 20px 30px;
+}
+
+/* Transformation */
+
+.transiton :nth-child(3) {
+  background: lightseagreen;
+  /* 위치 */
+  transform: translate(100px, 10px); /* (x,y) */
+}
+.transiton :nth-child(3):hover {
+  cursor: pointer;
+}
+.transiton :nth-child(4) {
+  background: rgb(224, 199, 10);
+  transition: all 200ms ease;
+}
+.transiton :nth-child(4):hover {
+  cursor: pointer;
+  /* 덮어버림  */
+  transform: scale(2.5); /* (x,y) */
+}
+.transiton :nth-child(5) {
+  background: yellowgreen;
+  transition: all 200ms ease;
+  transform: rotate(-45deg);
+}
+.transiton :nth-child(5):hover {
+  cursor: pointer;
+}
+.transiton :nth-child(6) {
+  background: palevioletred;
+  transition: all 200ms ease;
+  animation: translate-color 5s linear -2s infinite alternate;
+}
+.transiton :nth-child(6):hover {
+  cursor: pointer;
+}
+.transiton :nth-child(7) {
+  background: gold;
+  transition: all 200ms ease;
+
+  transform: matrix(2, 1, 1, 2, 1, 1);
+  /* (x크기,x앵글,y크기 y앵글) */
+}
+.transiton :nth-child(7):hover {
+  cursor: pointer;
+}
+
+@keyframes translate-color {
+  0% {
+    background: black;
+    transform: translate(0px, 0px);
+  }
+  50% {
+    background: yellow;
+    transform: translate(30px, 30px);
+  }
+  100% {
+    background: red;
+    transform: translate(50px, 50px);
+  }
 }
