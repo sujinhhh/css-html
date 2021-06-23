@@ -3,7 +3,7 @@
 // // id에서 갖고 오기
 // const number = document.getElementById("h1");
 // const section = document.querySelector("section");
-const h2 = document.querySelector("h2");
+// const h2 = document.querySelector("h2");
 // console.log(h2);
 
 // const increment = () => {
@@ -366,36 +366,114 @@ const h2 = document.querySelector("h2");
 
 // 38. Mulidimensional Array   -------------------------------------->
 
-let ages = []; // 안에 있는 것을 Elements 라고 함
-ages[1] = 2;
-ages[3] = 8;
-ages[7] = 7;
-console.log(ages);
-ages.length = 20;
-for (i = 0; i < ages.length; i++) {
-  console.log(ages[i]);
+// let ages = []; // 안에 있는 것을 Elements 라고 함
+// ages[1] = 2;
+// ages[3] = 8;
+// ages[7] = 7;
+// console.log(ages);
+// ages.length = 20;
+// for (i = 0; i < ages.length; i++) {
+//   console.log(ages[i]);
+// }
+
+// let grades = [
+//   [35, 33, 55],
+//   [100, 99, 99],
+//   [105, 59, 49],
+// ];
+// console.log(grades[0][2]);
+// grades.length = 30;
+// // 38. Iterate throught Array Examples Search an Array
+// let found = false;
+// let search = 8;
+
+// let largest = ages[1];
+
+// for (let i = 0; i < ages.length; i++) {
+//   if (ages[i] > largest) {
+//     largest = ages[i];
+//   }
+
+//   // 갭 or undefine 빼기
+//   if (ages[i] !== undefined && ages[i] === search) {
+//     found = true;
+//     console.log(ages[i], "index at : " + i);
+//   } else {
+//     console.log();
+//   }
+
+//   if (found) {
+//   }
+// }
+// console.log(ages.indexOf(largest));
+
+// 39. Average of Array Values   -------------------------------------->
+
+let arr = [2, 4, 5, 6, 7, 8, 9, 1, , 6];
+
+let total = 0;
+for (i = 0; i < arr.length; i++) {
+  total += arr[i];
+}
+console.log(Math.round(total / arr.length));
+
+// --------------------------------------------------------------------->
+let count = 0;
+
+for (i = 0; i < arr.length; i++) {
+  if (arr[i] !== undefined) {
+    count++;
+    total += arr[i];
+  }
 }
 
-let grades = [
-  [35, 33, 55],
-  [100, 99, 99],
-  [105, 59, 49],
-];
-console.log(grades[0][2]);
-grades.length = 30;
-// 38. Iterate throught Array Examples Search an Array
-let found = false;
-let search = 8;
+// --------------------------------------------------------------------->
+const tot = (array) => {
+  let total = array.reduce((acc, item) => {
+    return acc + item;
+  }, 0);
+  console.log(total / count);
+};
+tot(arr);
 
-for (let i = 0; i < ages.length; i++) {
-  // 갭 or undefine 빼기
-  if (ages[i] !== undefined && ages[i] === search) {
-    found = true;
-    console.log(ages[i], "index at : " + i);
-  } else {
-    console.log();
-  }
+// 40. Fill Array from User input, sentinel value----------------------------------------------->
+// 숫자로 바꾸기
 
-  if (found) {
-  }
-}
+// 숫자로 바꾸기
+
+//  끝에 있는 vaule 관련 ( pop, push)
+
+arr.push(Number("4"));
+let newArr = [2, 5, 9, 20, 7];
+let popVal = newArr.pop();
+
+console.log(popVal);
+
+console.log(newArr);
+
+//  앞에 있는 vaule 관련 ( unshift, shift)
+// 앞숫자 삭제 (shift)
+let shiftValue = newArr.shift();
+console.log(shiftValue);
+console.log(newArr);
+
+//  몇개인지 알려줌 (unshift)
+let unshiftValue = newArr.unshift(6, 9, 0);
+console.log(unshiftValue);
+console.log(newArr);
+
+// 원하는 것 삭제 (splice(index, 지우고 싶은 만큼))
+let spliceDel = newArr.splice(0, 3);
+console.log(spliceDel);
+console.log(newArr);
+
+// 원하는것 추가 (index, 지우고 싶은 양, 추가하고 싶은거)
+let spliceAdd = newArr.splice(0, 0, "My dream programmer");
+console.log(newArr);
+
+// 원하는 자리에 원하는거 넣기
+let replaced = newArr.splice(1, 2, "*", "*");
+console.log(newArr);
+
+let fillVal = newArr.fill("😁", 1, 3);
+console.log(newArr);
