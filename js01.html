@@ -13,6 +13,24 @@
     <button id="btn01">버튼 없애기</button>
     <h2></h2>
 
-    <section></section>
+    <section>
+      <form name="selectForm">
+        <p>
+          <label for="musicTypes"
+            >Choose some music types, then click the button below:</label
+          >
+          <select id="musicTypes" name="musicTypes" multiple="multiple">
+            <option selected="selected">R&B</option>
+            <option>Jazz</option>
+            <option>Blues</option>
+            <option>New Age</option>
+            <option>Classical</option>
+            <option>Opera</option>
+          </select>
+        </p>
+        <p><input id="btn" type="button" value="How many are selected?" /></p>
+      </form>
+      <div id="destination"></div>
+    </section>
   </body>
 </html>
