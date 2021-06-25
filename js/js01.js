@@ -409,71 +409,187 @@
 
 // 39. Average of Array Values   -------------------------------------->
 
-let arr = [2, 4, 5, 6, 7, 8, 9, 1, , 6];
+// let arr = [2, 4, 5, 6, 7, 8, 9, 1, , 6];
 
-let total = 0;
-for (i = 0; i < arr.length; i++) {
-  total += arr[i];
+// let total = 0;
+// for (i = 0; i < arr.length; i++) {
+//   total += arr[i];
+// }
+// console.log(Math.round(total / arr.length));
+
+// // --------------------------------------------------------------------->
+// let count = 0;
+
+// for (i = 0; i < arr.length; i++) {
+//   if (arr[i] !== undefined) {
+//     count++;
+//     total += arr[i];
+//   }
+// }
+
+// // --------------------------------------------------------------------->
+// const tot = (array) => {
+//   let total = array.reduce((acc, item) => {
+//     return acc + item;
+//   }, 0);
+//   console.log(total / count);
+// };
+// tot(arr);
+
+// // 40. Fill Array from User input, sentinel value----------------------------------------------->
+// // 숫자로 바꾸기
+
+// // 숫자로 바꾸기
+
+// //  끝에 있는 vaule 관련 ( pop, push)
+
+// arr.push(Number("4"));
+// let newArr = [2, 5, 9, 20, 7];
+// let popVal = newArr.pop();
+
+// console.log(popVal);
+
+// console.log(newArr);
+
+// //  앞에 있는 vaule 관련 ( unshift, shift)
+// // 앞숫자 삭제 (shift)
+// let shiftValue = newArr.shift();
+// console.log(shiftValue);
+// console.log(newArr);
+
+// //  몇개인지 알려줌 (unshift)
+// let unshiftValue = newArr.unshift(6, 9, 0);
+// console.log(unshiftValue);
+// console.log(newArr);
+
+// // 원하는 것 삭제 (splice(index, 지우고 싶은 만큼))
+// let spliceDel = newArr.splice(0, 3);
+// console.log(spliceDel);
+// console.log(newArr);
+
+// // 원하는것 추가 (index, 지우고 싶은 양, 추가하고 싶은거)
+// let spliceAdd = newArr.splice(0, 0, "My dream programmer");
+// console.log(newArr);
+
+// // 원하는 자리에 원하는거 넣기
+// let replaced = newArr.splice(1, 2, "*", "*");
+// console.log(newArr);
+
+// slice // 새 배열 리턴
+
+// console.log(newArr.slice(0, 5));
+
+// let fillVal = newArr.fill("😁", 1, 3);
+// console.log(newArr);
+
+//  43. sort ----------------------------------------------->
+const number = [1, 3, 2, 5, 2, 6, 3, 7, 29, 55, 10];
+// //  작은숫자부터나열하는 function
+
+// const sortNum = number.sort((a, b) => a - b);
+// console.log(sortNum);
+
+// console.log(number.copyWithin());
+
+// const number2 = ["a", "s", "f", "e"];
+
+// let concatV = number.concat(number2);
+// console.log(concatV);
+// // 오리지날이 안바뀜
+// console.log(number);
+
+// console.log(number.includes("a"));
+
+// //  value 가 어디에 있는지 알려주고 없으면  -1
+// console.log(number.indexOf("a"));
+
+// // join
+// console.log(number2.join());
+// console.log(number2.join(""));
+// console.log(number2.join(" "));
+// console.log(number2.join("-"));
+// console.log(number2.join("\n"));
+// console.log(number2.join('"'));
+
+//  forEach ----------------------------------------------->
+// let print = "";
+// const forloop = document.querySelector(".forloop");
+// for (let i = 0; i < number.length; i++) {
+//   print += number[i];
+//   // forloop.innerHTML += print + "<br/>";
+// }
+// console.log(print);
+
+// number.forEach((i, index) => {
+//   print += i;
+//   forloop.innerHTML += `${print} -  index : ${index} <br / >`;
+// });
+// number.forEach((i, index) => {
+//   forloop.innerHTML += `${print} -  index : ${index} <br / >`;
+// });
+
+// 45. Iterate Multidimensional Array
+
+let myGrade = [
+  [2, 4, 5, 6, 2, 89],
+  [20, 40, 50, 10, 2, 89],
+  [200, 400, 500, 100, 20, 890],
+];
+
+// for (let i = 0; i < myGrade.length; i++) {
+//   console.log(myGrade[i]);
+//   for (let k = 0; k < myGrade[i].length; k++) {
+//     console.log(myGrade[i][k]);
+//   }
+//   console.log("~~~~~~~~");
+// }
+
+// //  -----------------> 위에 것하고 같음
+
+// myGrade.forEach((row) => {
+//   console.log(
+//     row.forEach((col) => {
+//       console.log(col);
+//     })
+//   );
+//   console.log("~~~~~~~~");
+// });
+
+//  46.Label with Break and Continue  ----------------------------------------------->
+
+// outerLoop: for (let i = 0; i < myGrade.length; i++) {
+//   for (let k = 0; k < myGrade[i].length; k++) {
+//     console.log(myGrade[i][k]);
+//     if (myGrade[i][k] === 500) {
+//       console.log("you found value");
+//       continue outerLoop;
+//       //  continue 뒤에꺼는 무시하고 처음부터 다시 시작함
+//     }
+//     console.log("2nd for");
+//   }
+//   console.log("~~~~~");
+// }
+
+// Dates Unix Timesstamp ----------------------------------------------->
+// constructor에서 새로운 오브젝트를 만들때 / new Date(1990, 11 (0 base : 12월), 31)
+let date = new Date(2021, 5);
+console.log(date);
+// GMT standard time zone- 0400 : 4hrs
+let miliDate = new Date(1000);
+console.log(miliDate);
+
+//  얼마나 시간이 걸리는지
+
+let start = Date.now();
+
+let x = 0;
+for (let i = 0; i < 1000; i++) {
+  x = x + i;
 }
-console.log(Math.round(total / arr.length));
+console.log(x);
 
-// --------------------------------------------------------------------->
-let count = 0;
+let time = Date.now();
+let total = time - start;
+console.log(total);
 
-for (i = 0; i < arr.length; i++) {
-  if (arr[i] !== undefined) {
-    count++;
-    total += arr[i];
-  }
-}
-
-// --------------------------------------------------------------------->
-const tot = (array) => {
-  let total = array.reduce((acc, item) => {
-    return acc + item;
-  }, 0);
-  console.log(total / count);
-};
-tot(arr);
-
-// 40. Fill Array from User input, sentinel value----------------------------------------------->
-// 숫자로 바꾸기
-
-// 숫자로 바꾸기
-
-//  끝에 있는 vaule 관련 ( pop, push)
-
-arr.push(Number("4"));
-let newArr = [2, 5, 9, 20, 7];
-let popVal = newArr.pop();
-
-console.log(popVal);
-
-console.log(newArr);
-
-//  앞에 있는 vaule 관련 ( unshift, shift)
-// 앞숫자 삭제 (shift)
-let shiftValue = newArr.shift();
-console.log(shiftValue);
-console.log(newArr);
-
-//  몇개인지 알려줌 (unshift)
-let unshiftValue = newArr.unshift(6, 9, 0);
-console.log(unshiftValue);
-console.log(newArr);
-
-// 원하는 것 삭제 (splice(index, 지우고 싶은 만큼))
-let spliceDel = newArr.splice(0, 3);
-console.log(spliceDel);
-console.log(newArr);
-
-// 원하는것 추가 (index, 지우고 싶은 양, 추가하고 싶은거)
-let spliceAdd = newArr.splice(0, 0, "My dream programmer");
-console.log(newArr);
-
-// 원하는 자리에 원하는거 넣기
-let replaced = newArr.splice(1, 2, "*", "*");
-console.log(newArr);
-
-let fillVal = newArr.fill("😁", 1, 3);
-console.log(newArr);
+console.log(time);
