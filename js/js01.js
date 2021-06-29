@@ -572,24 +572,103 @@ let myGrade = [
 
 // Dates Unix Timesstamp ----------------------------------------------->
 // constructor에서 새로운 오브젝트를 만들때 / new Date(1990, 11 (0 base : 12월), 31)
-let date = new Date(2021, 5);
-console.log(date);
-// GMT standard time zone- 0400 : 4hrs
-let miliDate = new Date(1000);
-console.log(miliDate);
+// let date = new Date(2021, 5);
+// console.log(date);
+// // GMT standard time zone- 0400 : 4hrs
+// let miliDate = new Date(1000);
+// console.log(miliDate);
 
-//  얼마나 시간이 걸리는지
+// //  얼마나 시간이 걸리는지
 
-let start = Date.now();
+// let start = Date.now();
 
-let x = 0;
-for (let i = 0; i < 1000; i++) {
-  x = x + i;
-}
-console.log(x);
+// let x = 0;
+// for (let i = 0; i < 1000; i++) {
+//   x = x + i;
+// }
+// console.log(x);
 
-let time = Date.now();
-let total = time - start;
-console.log(total);
+// let time = Date.now();
+// let total = time - start;
+// console.log(total);
 
-console.log(time);
+// console.log(time);
+
+//  날짜 카운트 다운 ----------------------------------------------->
+
+// let today = new Date(2021, 7, 25);
+// console.log(today);
+// let dueDay = new Date(2021, 8, 16);
+
+// let days = dueDay - today;
+// let oneday = 1000 * 3600 * 24;
+// console.log(days / oneday);
+
+// let date = Date.parse("12 Jan 1995");
+// date = Date.parse("1995-01-12");
+
+// //  한국 시간 구하기 ----------------------------------------------->
+// var kTime = new Date();
+// var kTime2 = new Date(Date.UTC(2021, 7, 25, 14, 0, 0));
+
+// //  각자 나라말로 출력
+// console.log(kTime.toLocaleTimeString("ko-KR"));
+
+// console.log(kTime.getFullYear());
+// console.log(kTime.getMonth());
+// console.log(kTime.getDate());
+
+// 50. Functions ----------------------------------------------->
+
+// function func(x) {
+//   x.name = "sujin";
+// }
+// let me = { name: "kevin" };
+// func(me);
+// console.log(me.name);
+
+// function func(x) {
+//   x = {};
+//   x.name = "sujin";
+// }
+// let me = { name: "kevin" };
+// func(me);
+// console.log(me.name);
+
+// 51.Callback Functions ----------------------------------------------->
+
+// const myfunc = () => 5 + 5;
+// function doSome(x) {
+//   return x();
+// }
+// console.log(doSome(myfunc));
+
+// // 52.Async Functions ----------------------------------------------->
+
+// let doSomething = function () {
+//   console.log("done");
+// };
+// setTimeout(doSomething, 1000);
+
+// 53.Function Declarations adn expression ----------------------------------------------->
+//  제곱근 구하기
+// function pow(x, y) {
+//   let total = 1;
+//   for (let i = 0; i < y; i++) {
+//     console.log(x);
+
+//     total *= x;
+//   }
+//   return total;
+// }
+// console.log(pow(2, 3));
+
+// // 54. hoisting ----------------------------------------------->
+// // function declation = 됨 , function expression = 안됨
+// //  자바 스크립트는 두번 훑음  //  undefine이 되는 이유
+// var x;
+// console.log(x);
+// x= 10
+// //  이 두개는 같은거
+// console.log(x);
+// var x = 10
