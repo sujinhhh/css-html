@@ -1,0 +1,28 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+
+h1::before {
+  content: "new";
+  background: red;
+  width: 100%;
+  font-size: 2rem;
+}
+
+h1::after {
+  content: "after";
+  background: green;
+  font-size: 2rem;
+  padding: 0.5rem;
+  color: white;
+}
+background-repeat: no-repeat;
+transition: transform ease-in-out 150ms, bottom ease-out 150ms;
+transform: scale(0);
+}
+&:hover::after {
+transform: scale(1);
